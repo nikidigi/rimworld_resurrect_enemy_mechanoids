@@ -5,7 +5,7 @@ using Verse;
 namespace ResurrectEnemyMechanoids
 {
     [HarmonyPatch(typeof(Bill_ResurrectMech), nameof(Bill_ResurrectMech.IsFixedOrAllowedIngredient))]
-    public class IsFixedOrAllowedIngredientPatch
+    class Bill_ResurrectMech_IsFixedOrAllowedIngredient_Patch
     {
         static bool Prefix(Bill_ResurrectMech __instance, ref bool __result, ref Thing thing)
         {
@@ -27,7 +27,7 @@ namespace ResurrectEnemyMechanoids
     }
 
     [HarmonyPatch(typeof(Bill_ResurrectMech), nameof(Bill_ResurrectMech.ProducePawn))]
-    public class ProducePawnPatch
+    class Bill_ResurrectMech_ProducePawn_Patch
     {
         static bool Prefix(Bill_ResurrectMech __instance)
         {
