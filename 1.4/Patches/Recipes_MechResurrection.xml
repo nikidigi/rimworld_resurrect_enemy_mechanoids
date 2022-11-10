@@ -13,6 +13,13 @@
   </Operation>
 
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[defName="ResurrectMediumMech"]/fixedIngredientFilter/thingDefs</xpath>
+    <value>
+      <li>Corpse_Mech_Termite</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/RecipeDef[defName="ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs</xpath>
     <value>
       <li>Corpse_Mech_Apocriton</li>
