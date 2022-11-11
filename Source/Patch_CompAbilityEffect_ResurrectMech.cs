@@ -19,7 +19,7 @@ namespace ResurrectEnemyMechanoids
             }
         }
 
-        static void Postfix(CompAbilityEffect_ResurrectMech __instance, ref LocalTargetInfo target)
+        static void Postfix(CompAbilityEffect_ResurrectMech __instance)
         {
             if (mech is not null)
             {
