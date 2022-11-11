@@ -6,7 +6,7 @@ using Verse;
 namespace ResurrectEnemyMechanoids
 {
     [HarmonyPatch(typeof(Verb_CastAbility), nameof(Verb_CastAbility.OrderForceTarget))]
-    class Verb_CastAbility_OrderForceTarget_Patch
+    class Patch_Verb_CastAbility_OrderForceTarget
     {
         static bool Prefix(Verb_CastAbility __instance, ref LocalTargetInfo target)
         {
@@ -35,7 +35,7 @@ namespace ResurrectEnemyMechanoids
     }
 
     [HarmonyPatch(typeof(Verb_CastAbility), nameof(Verb_CastAbility.IsApplicableTo))]
-    class Verb_CastAbility_IsApplicableTo_Patch
+    class Patch_Verb_CastAbility_IsApplicableTo
     {
         static bool Prefix(Verb_CastAbility __instance, ref bool __result, ref LocalTargetInfo target)
         {

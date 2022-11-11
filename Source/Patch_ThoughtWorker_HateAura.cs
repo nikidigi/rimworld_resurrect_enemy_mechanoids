@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 namespace ResurrectEnemyMechanoids
 {
     [HarmonyPatch(typeof(RimWorld.ThoughtWorker_HateAura), "CurrentStateInternal")]
-    class ThoughtWorker_HateAura_CurrentStateInternal_Patch
+    class Patch_ThoughtWorker_HateAura_CurrentStateInternal
     {
         static readonly CodeInstruction EP = new(
             OpCodes.Callvirt,
