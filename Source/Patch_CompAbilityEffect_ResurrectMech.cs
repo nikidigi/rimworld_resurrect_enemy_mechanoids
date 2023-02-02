@@ -1,5 +1,6 @@
 using HarmonyLib;
 using RimWorld;
+using System.Reflection;
 using Verse;
 
 namespace ResurrectEnemyMechanoids
@@ -31,6 +32,10 @@ namespace ResurrectEnemyMechanoids
                 }
 
                 mech = null;
+
+                 __instance.parent.GetType()
+                    .GetField("charges", BindingFlags.NonPublic | BindingFlags.Instance)
+                    .SetValue(__instance.parent, __instance.ChargesRemaining);
             }
         }
     }
