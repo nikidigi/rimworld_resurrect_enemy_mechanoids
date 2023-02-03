@@ -49,7 +49,7 @@ namespace ResurrectEnemyMechanoids
 
             for (int i = 0; i < resurrection.EffectComps.Count; i++)
             {
-                if (resurrection.comps[i] is CompAbilityEffect_ResurrectMech comp)
+                if (resurrection.EffectComps[i] is CompAbilityEffect_ResurrectMech comp)
                 {
                     if (comp.ChargesRemaining < MaxCharges)
                     {
