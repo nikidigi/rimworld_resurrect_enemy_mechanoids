@@ -56,7 +56,7 @@ namespace ResurrectEnemyMechanoids
                         int charges = comp.ChargesRemaining + 1;
 
                         comp.GetType()
-                            .GetField("charges", BindingFlags.NonPublic | BindingFlags.Instance)
+                            .GetField("resurrectCharges", BindingFlags.NonPublic | BindingFlags.Instance)
                             .SetValue(comp, charges);
 
                         resurrection.GetType()
