@@ -17,7 +17,7 @@ namespace ResurrectEnemyMechanoids
 
         static void Postfix(Pawn __instance)
         {
-            if (__instance.kindDef != PawnKindDefOf.Mech_Apocriton || !__instance.IsColonyMech || __instance.Dead || !__instance.Spawned)
+            if (__instance.kindDef != PawnKindDefOf.Mech_Apocriton || __instance.Dead || !__instance.IsColonyMech)
             {
                 return;
             }
