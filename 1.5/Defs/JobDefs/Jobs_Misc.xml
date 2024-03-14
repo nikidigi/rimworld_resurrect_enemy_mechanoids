@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef ParentName="CastAbilityOnThing">
+    <defName>ResurrectEnemyMechanoids_JobResurrectMech</defName>
+    <driverClass>JobDriver_CastAbilityGoTo</driverClass>
+    <neverShowWeapon>true</neverShowWeapon>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+
+</Defs>
