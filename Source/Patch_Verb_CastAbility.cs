@@ -15,8 +15,6 @@ namespace ResurrectEnemyMechanoids
                 return true;
             }
 
-            IntVec3 dest;
-
             if (CastPositionFinder.TryFindCastPosition(new CastPositionRequest()
             {
                 caster = __instance.CasterPawn,
@@ -25,7 +23,7 @@ namespace ResurrectEnemyMechanoids
                 maxRangeFromTarget = __instance.ability.verb.verbProps.range,
                 wantCoverFromTarget = false,
                 maxRegions = 50,
-            }, out dest))
+            }, out IntVec3 dest))
             {
                 __instance.ability.QueueCastingJob(target, dest);
             }

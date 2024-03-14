@@ -6,6 +6,7 @@
   <packageId>nikidigi.ResurrectEnemyMechanoids</packageId>
   <supportedVersions>
     <li>1.4</li>
+    <li>1.5</li>
   </supportedVersions>
   <description>Resurrect enemy mechanoids!</description>
   <modDependencies>

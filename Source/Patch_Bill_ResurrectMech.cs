@@ -26,8 +26,8 @@ namespace ResurrectEnemyMechanoids
         }
     }
 
-    [HarmonyPatch(typeof(Bill_ResurrectMech), nameof(Bill_ResurrectMech.ProducePawn))]
-    class Patch_Bill_ResurrectMech_ProducePawn
+    [HarmonyPatch(typeof(Bill_ResurrectMech), nameof(Bill_ResurrectMech.CreateProducts))]
+    class Patch_Bill_ResurrectMech_CreateProducts
     {
         static bool Prefix(Bill_ResurrectMech __instance)
         {

@@ -9,7 +9,7 @@ namespace ResurrectEnemyMechanoids
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.TickRare))]
     class Patch_Pawn_TickRare
     {
-        static Dictionary<string, int> apocritons = new();
+        static readonly Dictionary<string, int> apocritons = [];
 
         const int MaxCharges = 30;
 
@@ -17,14 +17,12 @@ namespace ResurrectEnemyMechanoids
 
         static void Postfix(Pawn __instance)
         {
-            if (__instance.kindDef != PawnKindDefOf.Mech_Apocriton || __instance.Dead || !__instance.IsColonyMech)
+            if (__instance.def != ThingDefOf.Mech_Apocriton || __instance.Faction != Faction.OfPlayer || __instance.Dead)
             {
                 return;
             }
 
-            int ticks;
-
-            if (!apocritons.TryGetValue(__instance.ThingID, out ticks))
+            if (!apocritons.TryGetValue(__instance.ThingID, out int ticks))
             {
                 ticks = Find.TickManager.TicksGame;
 
