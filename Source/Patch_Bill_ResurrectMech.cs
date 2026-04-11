@@ -9,18 +9,9 @@ namespace ResurrectEnemyMechanoids
     {
         static bool Prefix(Bill_ResurrectMech __instance, ref bool __result, ref Thing thing)
         {
-            __result = true;
-
             Bill_MechImpl super = new(__instance.recipe, __instance.precept);
 
-            if (!super.IsFixedOrAllowedIngredient(thing))
-            {
-                __result = false;
-            }
-            else if (thing is Corpse)
-            {
-                __result = __instance.ingredientFilter.Allows(thing);
-            }
+            __result = super.IsFixedOrAllowedIngredient(thing);
 
             return false;
         }
