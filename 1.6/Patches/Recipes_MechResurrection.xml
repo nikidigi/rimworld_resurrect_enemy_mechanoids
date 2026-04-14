@@ -21,6 +21,97 @@
     <xpath>Defs</xpath>
     <value>
       <RecipeDef ParentName="BaseHostileMechanoidRecipe">
+        <defName>ResurrectHostileLightMech</defName>
+        <label>resurrect hostile light mechanoid</label>
+        <description>Resurrect a hostile light mechanoid. Its core must be reinitialized to accept new directives. Requires a basic subcore for reprogramming.</description>
+        <ingredients>
+          <li>
+            <filter>
+              <categories>
+                <li>Corpses</li>
+              </categories>
+            </filter>
+            <count>1</count>
+          </li>
+          <li>
+            <filter>
+              <thingDefs>
+                <li>Steel</li>
+              </thingDefs>
+            </filter>
+            <count>25</count>
+          </li>
+          <li>
+            <filter>
+              <thingDefs>
+                <li>SubcoreBasic</li>
+              </thingDefs>
+            </filter>
+            <count>1</count>
+          </li>
+        </ingredients>
+        <fixedIngredientFilter>
+          <thingDefs>
+            <li>Corpse_Mech_Agrihand</li>
+            <li>Corpse_Mech_Cleansweeper</li>
+            <li>Corpse_Mech_Constructoid</li>
+            <li>Corpse_Mech_Lifter</li>
+            <li>Corpse_Mech_Militor</li>
+          </thingDefs>
+        </fixedIngredientFilter>
+        <researchPrerequisite>BasicMechtech</researchPrerequisite>
+      </RecipeDef>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs</xpath>
+    <value>
+      <RecipeDef ParentName="BaseHostileMechanoidRecipe">
+        <defName>ResurrectHostileLightHMech</defName>
+        <label>resurrect hostile light mechanoid (high)</label>
+        <description>Resurrect a hostile light mechanoid. Its core must be reinitialized to accept new directives. Requires a high subcore for reprogramming.</description>
+        <ingredients>
+          <li>
+            <filter>
+              <categories>
+                <li>Corpses</li>
+              </categories>
+            </filter>
+            <count>1</count>
+          </li>
+          <li>
+            <filter>
+              <thingDefs>
+                <li>Steel</li>
+              </thingDefs>
+            </filter>
+            <count>25</count>
+          </li>
+          <li>
+            <filter>
+              <thingDefs>
+                <li>SubcoreHigh</li>
+              </thingDefs>
+            </filter>
+            <count>1</count>
+          </li>
+        </ingredients>
+        <fixedIngredientFilter>
+          <thingDefs>
+            <li>Corpse_Mech_Fabricor</li>
+            <li>Corpse_Mech_Paramedic</li>
+          </thingDefs>
+        </fixedIngredientFilter>
+        <researchPrerequisite>HighMechtech</researchPrerequisite>
+      </RecipeDef>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs</xpath>
+    <value>
+      <RecipeDef ParentName="BaseHostileMechanoidRecipe">
         <defName>ResurrectHostileMediumMech</defName>
         <label>resurrect hostile medium mechanoid</label>
         <description>Resurrect a hostile medium mechanoid. Its core must be reinitialized to accept new directives. Requires a standard subcore for reprogramming.</description>
@@ -70,7 +161,7 @@
     <xpath>Defs</xpath>
     <value>
       <RecipeDef ParentName="BaseHostileMechanoidRecipe">
-        <defName>ResurrectHostileAdvancedMech</defName>
+        <defName>ResurrectHostileMediumHMech</defName>
         <label>resurrect hostile medium mechanoid (high)</label>
         <description>Resurrect a hostile medium mechanoid. Its core must be reinitialized to accept new directives. Requires a high subcore for reprogramming.</description>
         <ingredients>
@@ -210,10 +301,18 @@
   </Operation>
 
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
+    <value>
+      <li>ResurrectHostileLightMech</li>
+      <li>ResurrectHostileLightHMech</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="LargeMechGestator"]/recipes</xpath>
     <value>
       <li>ResurrectHostileMediumMech</li>
-      <li>ResurrectHostileAdvancedMech</li>
+      <li>ResurrectHostileMediumHMech</li>
       <li>ResurrectHostileHeavyMech</li>
       <li>ResurrectHostileUltraHeavyMech</li>
     </value>
