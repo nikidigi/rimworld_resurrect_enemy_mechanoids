@@ -44,7 +44,7 @@
           <li>
             <filter>
               <thingDefs>
-                <li>SubcoreBasic</li>
+                <li>ComponentIndustrial</li>
               </thingDefs>
             </filter>
             <count>1</count>
