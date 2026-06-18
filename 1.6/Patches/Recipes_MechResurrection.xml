@@ -23,7 +23,7 @@
       <RecipeDef ParentName="BaseHostileMechanoidRecipe">
         <defName>ResurrectHostileLightMech</defName>
         <label>resurrect hostile light mechanoid</label>
-        <description>Resurrect a hostile light mechanoid. Its core must be reinitialized to accept new directives. Requires a basic subcore for reprogramming.</description>
+        <description>Resurrect a hostile light mechanoid. Its systems are simple enough to be restored with basic repairs and replacement parts.</description>
         <ingredients>
           <li>
             <filter>
