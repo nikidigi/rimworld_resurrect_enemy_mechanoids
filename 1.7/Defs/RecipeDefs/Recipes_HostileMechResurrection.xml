@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RecipeDef Name="BaseHostileMechanoidRecipe" ParentName="BaseMechanoidRecipe" Abstract="True">
+    <mechResurrection>true</mechResurrection>
+    <displayPriority>600</displayPriority>
+    <fixedIngredientFilter>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesMechEnemy</li>
+      </specialFiltersToAllow>
+    </fixedIngredientFilter>
+    <forceHiddenSpecialFilters>
+      <li>AllowCorpsesMechEnemy</li>
+    </forceHiddenSpecialFilters>
+  </RecipeDef>
+
+</Defs>
