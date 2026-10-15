@@ -7,13 +7,11 @@ namespace ResurrectEnemyMechanoids
     [HarmonyPatch(typeof(Bill_ResurrectMech), nameof(Bill_ResurrectMech.IsFixedOrAllowedIngredient))]
     class Patch_Bill_ResurrectMech_IsFixedOrAllowedIngredient
     {
-        static bool Prefix(Bill_ResurrectMech __instance, ref bool __result, ref Thing thing)
+        static void Postfix(ref bool __result, ref Thing thing)
         {
-            Bill_MechImpl super = new(__instance.recipe, __instance.precept);
-
-            __result = super.IsFixedOrAllowedIngredient(thing);
-
-            return false;
+            if (!__result && thing is Corpse corpse && corpse.InnerPawn.RaceProps.IsMechanoid) {
+                __result = true;
+            }
         }
     }
 
